@@ -1,8 +1,24 @@
 body {
-  padding: 50px;
+  padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+.container {
+  max-width: 960px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+main {
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.ele {
+  margin:10px;
 }

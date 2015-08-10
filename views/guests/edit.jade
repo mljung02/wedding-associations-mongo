@@ -1,0 +1,31 @@
+extends ../layout
+
+block content
+  main
+    div.container
+      h1 Edit Guest #{guest.name}
+      div
+        form(method="post" action="/guests/"+guest._id)
+          div.ele
+            label(for="guest-name") Name:
+            p
+              input(type="text" name="name" id="guest-name" value=guest.name required)
+          div.ele
+            input(type="checkbox" name="rsvp" checked=guest.rsvp)
+            label(for="RSVP") RSVP
+          div.ele
+            label(for="song") Song Requests (Separated by line):
+            p
+              textarea(id="song" name="songs")= guest.songNames
+          div.ele
+            label(for="services") Services:
+            p
+              select(multiple size="6" name="services" id="services")
+                option(value='shuttle' selected=guest.shuttle) Shuttle
+                option(value='hotel' selected=guest.hotel) Hotel
+                option(value='vegetarian' selected=guest.vegetarian) Vegetarian
+                option(value='gluetenFree' selected=guest.gluetenFree) Glueten Free
+                option(value='brunch' selected=guest.brunch) Brunch
+                option(value='welcome' selected=guest.welcome) Welcome Dinner
+          div.ele
+            button(type="submit") Edit Guest

@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+  main
+    div.container
+      h1 New Guest
+      div
+        form(method="post" action="/guests")
+          div.ele
+            label(for="guest-name") Name:
+            p
+              input(type="text" name="name" id="guest-name" required)
+          div.ele
+            input(type="checkbox" name="rsvp")
+            label(for="RSVP") RSVP
+          div.ele
+            label(for="song") Song Requests (Separated by line):
+            p
+              textarea(id="song" name="songs")
+          div.ele
+            label(for="services") Services:
+            p
+              select(multiple size="6" name="services" id="services")
+                option(value='shuttle') Shuttle
+                option(value='hotel') Hotel
+                option(value='vegetarian') Vegetarian
+                option(value='gluetenFree') Glueten Free
+                option(value='brunch') Brunch
+                option(value='welcome') Welcome Dinner
+
+          div.ele
+            button(type="submit") New Guest

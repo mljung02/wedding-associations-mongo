@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+  
+  main
+    div.container
+      h1= guest.name
+      if guest.rsvp
+        h2 This Guest has RSVP'd
+      else
+        h3.red This Guest has not RSVP'd
+      if guest.songs.length > 0
+        p This guest has suggested songs:
+        ul
+          each song in guest.songs
+            li= song.name
+      p This guest is using the following services:
+        ul
+          each service in guest.services
+            li=service
+      a(href='/guests/'+guest._id+'/edit') Edit Guest
