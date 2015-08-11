@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var calls = require('../lib/calls')
+require('dotenv').load()
+var db = require('monk')(process.env.MONGOLABS_URI)
 
 /* GET home page. */
 
