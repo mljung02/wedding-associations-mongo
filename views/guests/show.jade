@@ -14,8 +14,15 @@ block content
         ul
           each song in guest.songs
             li= song.name
+              span  | 
+              a(href='/songs/'+song._id+'/delete/'+guest._id) Remove
       p This guest is using the following services:
         ul
           each service in guest.services
             li=service
-      a(href='/guests/'+guest._id+'/edit') Edit Guest
+      p      
+        a(href='/guests/'+guest._id+'/edit') Edit Guest
+      p
+        a(href='/guests/'+guest._id+'/delete') Delete Guest
+      p
+        a(href='/guests') HOME

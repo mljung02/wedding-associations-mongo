@@ -5,11 +5,14 @@ block content
   main
     div.container
       h1 Guests
-      ul
-        each guest in guests
-          li
-            a(href="/guests/"+guest._id)= guest.name
-            div
-              input(name=guest._id type="checkbox" checked=guest.rsvp id="rsvp")
-              label(for="rsvp") RSVP
+      form(method='post' action='/guests/rsvps')
+        ul
+          each guest in guests
+            li
+              a(href="/guests/"+guest._id)= guest.name
+              div
+                input(name='rsvps' type="checkbox" checked=guest.rsvp id="rsvp" value=guest._id)
+                label(for="rsvp") RSVP
+        button(type='submit') Update RSVP
       a(href='/guests/new') Add Guest
+      
